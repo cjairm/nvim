@@ -31,8 +31,11 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-call plug#end()
+" Intellisense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+call plug#end()
 
 
 colorscheme gruvbox
@@ -61,17 +64,14 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-" Switch to your current theme
-"let g:airline_theme = 'onedark'
-
-
-
 let mapleader=' '
 
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>m :NERDTreeFind<CR>
+nmap <Leader>e <C-\><C-n><CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-nmap <Leader>n :bnext<CR>
-nmap <Leader>p :bprev<CR>
+nmap <Leader>u :bnext<CR>
+nmap <Leader>y :bprev<CR>
 nmap <Leader>i :Prettier<CR>
+nmap <C-p> :FZF<CR>
